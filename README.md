@@ -8,8 +8,9 @@ billing — with XLM payments on Stellar and cryptographic patient consent token
 
 ## Live Demo
 
-🌐 **[Try the demo →](https://your-app.vercel.app/demo)**
-📋 **[Join the waitlist →](https://your-app.vercel.app/landing)**
+🌐 **[Try the demo →](https://fearlesshealth-app.vercel.app/demo)**
+📋 **[Join the waitlist →](https://fearlesshealth-app.vercel.app/landing)**
+🔌 **[API health →](https://web-production-277f4c.up.railway.app/health)**
 
 ## Features
 
@@ -48,8 +49,8 @@ claws the token back. Access is verified on-chain before records are returned.
 
 ```bash
 # Clone and install
-git clone https://github.com/YOUR_USERNAME/fearlesshealth
-cd fearlesshealth
+git clone https://github.com/fearlesshealth/fearlesshealth-app
+cd fearlesshealth-app
 npm install
 
 # Configure environment
