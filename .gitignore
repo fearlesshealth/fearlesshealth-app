@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+*.js.map
+hospital.db
+hospital.db-shm
+hospital.db-wal

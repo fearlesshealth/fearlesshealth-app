@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install backend deps
+        run: npm install
+
+      - name: Build backend
+        run: npm run build
+        env:
+          NODE_ENV: production
+          JWT_SECRET: ci_test_secret
+          STELLAR_NETWORK: testnet
+          STELLAR_HORIZON_URL: https://horizon-testnet.stellar.org
+
+      - name: Install frontend deps
+        run: npm install
+        working-directory: frontend
+
+      - name: Build frontend
+        run: npm run build
+        working-directory: frontend
+
+      - name: Type check backend
+        run: npx tsc --noEmit
+
+      - name: Type check frontend
+        run: npx tsc --noEmit
+        working-directory: frontend
